@@ -1,12 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, BrowserRouter } from 'react-router-dom';
 import { StyleSheet, Text, View, ActivityIndicator} from 'react-native';
 import * as Location from 'expo-location'
 import React, { useEffect, useState } from 'react';
 import axios from "axios"
-import prevision from "./page/prevision"
-import CurrentWeather from "./components/CurrentWeather";
-//import Forecasts from "./components/Forecasts";
+import CurrentWeather from "../components/CurrentWeather";
+import Forecasts from "./components/Forecasts";
 
 const API_URL = (lat, lon) => `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=83fd24930f21f47970ebce9963b75953&lang=fr&units=metric`
 
@@ -55,8 +54,7 @@ export default function App() {
   // Une fois la localisation obtenue, afficher les coordonnées
   return (
     <View style={styles.container}>
-      <CurrentWeather data={data} />
-      {/*<Forecasts>datat={data}</Forecasts>*/}
+      <Forecasts>datat={data}</Forecasts>
     </View>
   );
 
@@ -104,6 +102,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
 
 
 // function Video({ video }) {
