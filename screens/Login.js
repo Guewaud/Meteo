@@ -56,7 +56,7 @@ const Login = () => {
         >
             <View>
                 <Text style={styles.Text}>
-                    Connexion
+                    Bienvenue
                 </Text>
             </View>
             <View style={styles.inputContainer}>
@@ -80,13 +80,13 @@ const Login = () => {
                     onPress={handleSignIn}
                     style={styles.button}
                 >
-                    <Text style={styles.buttonText}>Login</Text>
+                    <Text style={styles.buttonText}>Connexion</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress={handleSignUp}
                     style={[styles.button, styles.buttonOutline]}
                 >
-                    <Text style={styles.buttonOutlineText}>Register</Text>
+                    <Text style={styles.buttonOutlineText}>Inscription</Text>
                 </TouchableOpacity>
 
             </View>
