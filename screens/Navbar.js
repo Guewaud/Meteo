@@ -1,9 +1,8 @@
 import { StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Login from 'Login';
 import Home from 'Home';
-import Ionicon from 'react-native-vector-icon/Ionicon'
+import Ionicons from 'react-native-vector-icon/Ionicon'
 
 const tab = createBottomTabNavigator();
 
@@ -30,6 +29,7 @@ return(
                 }else if (route.name == "meteolocal") {
                     iconName = 'partly-sunny'
                 }
+                return <Ionicons name={iconName}/>
             }
         })}>
 
