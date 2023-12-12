@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {View, Text, StyleSheet} from "react-native";
+import {Text, StyleSheet, ScrollView} from "react-native";
 import { format } from "date-fns";
 import {fr} from "date-fns/locale";
 
@@ -19,15 +19,17 @@ export default function Forecasts({ data }){
         setForecasts(forecatsData)
     },[data])
     return(
-        <View>
+        <ScrollView>
+            vertical
+            showVerticalScrollIndicator={false}
             {forecasts.map(f => (
                 <>
                 <Text>{f.name}</Text>
                 <Text>{f.hour}</Text>
-                <Text>{f.temp}</Text>
+                <Text>{f.temp}°C</Text>
                 </>
             ))}
-        </View>
+        </ScrollView>
     )
 }
 
