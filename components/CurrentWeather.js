@@ -18,25 +18,30 @@ export default function CurrentWeather({ data }) {
     }, [data])
 
     return(
-        <>
+        <View style={styles.container}>
             <Text style={styles.city} >{data?.city.name}</Text>
             <Text style={styles.today} >Aujourd'hui</Text>
 
             <Image 
-                source={{ uri: CurrentWeather && CurrentWeather.weather && CurrentWeather.weather[0] && getIcon(CurrentWeather.weather[0].icon)}}
-                //source={{ uri: getIcon(CurrentWeather.weather[0].icon)}}
+                //source={{ uri: CurrentWeather && CurrentWeather.weather && CurrentWeather.weather[0] && getIcon(CurrentWeather.weather[0].icon)}}
+                source={{ uri: getIcon(CurrentWeather?.weather[0].icon)}}
                 style={{width:150, height:150}}
             />
 
             <Text style={styles.temp} >{Math.round(CurrentWeather?.main.temp)}°C</Text>
             <Text style={styles.description} >{CurrentWeather?.weather[0].description}</Text>
-        </>
+        </View>
     )
 }
 
 const Color_Date = "#6333C9"
 
 const styles = StyleSheet.create({
+    container:{
+        marginTop:120,
+        alignItems: "center",
+        height: "55%"
+    },
     city: {
         fontSize : 36,
         fontWeight: "500",

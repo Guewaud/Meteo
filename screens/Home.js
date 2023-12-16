@@ -5,7 +5,7 @@ import axios from "axios"
 //import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import CurrentWeather from "../components/CurrentWeather";
-// import Forecasts from "./components/Forecasts";
+import Forecasts from "../components/Forecasts";
 
 
 
@@ -58,19 +58,9 @@ const Home = () => {
     return (
         <View style={styles.container}>
         <CurrentWeather data={data} />
-        {/* <Forecasts datat={data} /> */}
+        <Forecasts data={data} />
         </View>
     );
-    
-
-
-    // return(
-    //     <View>
-    //         <Text>
-    //             Home
-    //         </Text>
-    //     </View>
-    // )
 }
 
 export default Home

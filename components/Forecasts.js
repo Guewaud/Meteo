@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import {Text, StyleSheet, ScrollView} from "react-native";
+import {Text, StyleSheet, ScrollView, View} from "react-native";
 import { format } from "date-fns";
 import {fr} from "date-fns/locale";
+import Weather from "./weather";
 
 export default function Forecasts({ data }){
     const [forecasts, setForecasts] = useState([])
@@ -17,22 +18,26 @@ export default function Forecasts({ data }){
             })
         })
         setForecasts(forecatsData)
-    },[data])
+    }, [data])
     return(
-        <ScrollView>
-            vertical
+        <ScrollView
+            horizontal
             showVerticalScrollIndicator={false}
+            style={styles.scroll}
+        >
             {forecasts.map(f => (
-                <>
-                <Text>{f.name}</Text>
-                <Text>{f.hour}</Text>
-                <Text>{f.temp}°C</Text>
-                </>
+                <View>
+                    <Text>{f.name}</Text>
+                    <Weather forecast={f} />
+                </View>
             ))}
         </ScrollView>
     )
 }
 
 const styles = StyleSheet.create({
-
+    scroll:{
+        width: "100%",
+        height: "35%"
+    }
 })
