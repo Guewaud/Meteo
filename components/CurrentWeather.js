@@ -17,8 +17,7 @@ export default function CurrentWeather({ data }) {
   }, [data]);
 
   const handleCurrentWeatherPress = () => {
-    console.log("CurrentWeather test!");
-   
+    console.log(isSameDay);
   };
 
   return (

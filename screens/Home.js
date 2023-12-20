@@ -69,6 +69,7 @@ const Home = () => {
       },
     });
   };
+  // Si la localisation est en cours de chargement, afficher un message de chargement
 
   if (loading) {
     return (
@@ -82,14 +83,12 @@ const Home = () => {
   return (
     <View style={styles.container}>
       <CurrentWeather data={data} />
-      <TouchableOpacity onPress={() => handleCurrentWeatherPress(data)}>
-        <Forecasts data={data} />
-      </TouchableOpacity>
+      {/* <TouchableOpacity onPress={() => handleCurrentWeatherPress(data)}> */}
+      <Forecasts data={data} />
+      {/* </TouchableOpacity> */}
     </View>
   );
 };
-
-// Si la localisation est en cours de chargement, afficher un message de chargement
 
 export default Home;
 

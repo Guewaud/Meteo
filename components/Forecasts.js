@@ -26,7 +26,6 @@ export default function Forecasts({ data }) {
         name: format(dt, "EEEE", { locale: fr }),
       };
     });
-
     let newForcastsData = forecatsData
       .map((forecast) => {
         return forecast.name;
@@ -46,23 +45,24 @@ export default function Forecasts({ data }) {
     setForecasts(newForcastsData);
   }, [data]);
 
-    const handleCurrentWeatherPress = (forecast) => {
-      if (!forecast) {
-        console.error("Prévision non définie");
-        return;
-      }
+  const handleCurrentWeatherPress = (forecast) => {
+    if (!forecast) {
+      console.error("Prévision non définie");
+      return;
+    }
 
-      console.log("Informations sur les prévisions sélectionnées :", forecast);
-      navigation.navigate("Detail", {
-        forecast,
-        date: forecast.date,
-        hour: forecast.hour,
-        loc: {
-          lat: forecast.lat,
-          lon: forecast.lon,
-        },
-      });
-    };
+    console.log("Informations sur les prévisions sélectionnées :", forecast);
+    navigation.navigate("Detail", {
+      forecast,
+      date: forecast.date,
+      hour: forecast.hour,
+      loc: {
+        lat: forecast.lat,
+        lon: forecast.lon,
+      },
+      dt: forecast.dt, 
+    });
+  };
 
   return (
     <ScrollView

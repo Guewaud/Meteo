@@ -5,14 +5,16 @@ import { useNavigation } from "@react-navigation/native";
 const Detail = ({ route }) => {
   console.log("Data in Detail:", route.params.forecast);
 
-  const { day, hour, temp, icon, name, date } = route.params.forecast;
-  const { lat, lon } = route.params.loc;
+  const { day, hour, temp, icon, name } = route.params.forecast;
+  const date = route.params.forecast.date;
+  const dt = route.params.dt;
 
   return (
     <View style={styles.container}>
       <View style={styles.infoBox}>
         <Text style={styles.city}>{route.params.forecast.city.name}</Text>
-
+        <Text>{`Date: ${date}`}</Text>
+        <Text>{`DT: ${dt}`}</Text> {/* Ajoutez cette ligne pour afficher dt */}
         {/* <Text>{name}</Text>
         <Text>{hour}h</Text>
         <Text>{temp}°C</Text>
