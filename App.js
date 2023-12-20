@@ -6,6 +6,7 @@ import { StyleSheet, View, Text } from "react-native";
 import Login from "./screens/Login";
 import Home from "./screens/Home";
 import Detail from "./screens/Detail";
+import Favoris from "./screens/Favoris";
 
 //const Stack = createNativeStackNavigator();
 const Stack = createStackNavigator();
@@ -28,6 +29,11 @@ export default function App() {
           options={{ headerShown: false }}
           name="Detail"
           component={Detail}
+        />
+        <Stack.Screen
+          options={{ headerShown: false }}
+          name="Favoris"
+          component={Favoris}
         />
       </Stack.Navigator>
     </NavigationContainer>

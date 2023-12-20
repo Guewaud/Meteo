@@ -14,6 +14,7 @@ import CurrentWeather from "../components/CurrentWeather";
 import Forecasts from "../components/Forecasts";
 import Detail from "./Detail";
 import { useNavigation } from "@react-navigation/native";
+import FavButton from "../components/FavButton";
 
 const API_URL = (lat, lon) =>
   `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=83fd24930f21f47970ebce9963b75953&lang=fr&units=metric`;
@@ -82,6 +83,7 @@ const Home = () => {
   return (
     <View style={styles.container}>
       <CurrentWeather data={data} />
+      <FavButton></FavButton>
       <TouchableOpacity onPress={() => handleCurrentWeatherPress(data)}>
         <Forecasts data={data} />
       </TouchableOpacity>
