@@ -16,12 +16,12 @@ export default function CurrentWeather({ data }) {
     setCurrentWeather(currentW[0]);
   }, [data]);
 
-  const handleCurrentWeatherPress = () => {
-    console.log(isSameDay);
-  };
+  // const handleCurrentWeatherPress = (data) => {
+  //   console.log(data);
+  // };
 
   return (
-    <TouchableOpacity onPress={handleCurrentWeatherPress}>
+    // <TouchableOpacity onPress={() => handleCurrentWeatherPress(data)}>
       <View style={styles.container}>
         <Text style={styles.city}>{data?.city.name}</Text>
         <Text style={styles.today}>Aujourd'hui</Text>
@@ -39,7 +39,7 @@ export default function CurrentWeather({ data }) {
           {CurrentWeather?.weather[0].description}
         </Text>
       </View>
-    </TouchableOpacity>
+    // </TouchableOpacity>
   );
 }
 

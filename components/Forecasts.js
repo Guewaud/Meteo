@@ -10,11 +10,11 @@ import { format } from "date-fns";
 import { fr } from "date-fns/locale";
 import Weather from "./weather";
 import { useNavigation } from "@react-navigation/native";
+// import Detail from "./Detail";
 
 export default function Forecasts({ data }) {
   const [forecasts, setForecasts] = useState([]);
   const navigation = useNavigation();
-
   useEffect(() => {
     const forecatsData = data.list.map((f) => {
       const dt = new Date(f.dt * 1000);
@@ -54,13 +54,13 @@ export default function Forecasts({ data }) {
     console.log("Informations sur les prévisions sélectionnées :", forecast);
     navigation.navigate("Detail", {
       forecast,
-      date: forecast.date,
-      hour: forecast.hour,
-      loc: {
-        lat: forecast.lat,
-        lon: forecast.lon,
-      },
-      dt: forecast.dt, 
+      // date: forecast.date,
+      // hour: forecast.hour,
+      // loc: {
+      //   lat: forecast.lat,
+      //   lon: forecast.lon,
+      // },
+      // dt: forecast.dt,
     });
   };
 

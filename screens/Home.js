@@ -25,7 +25,6 @@ const Home = () => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState(null);
   const navigation = useNavigation();
-
   useEffect(() => {
     const getCoordinates = async () => {
       const { status } = await Location.requestForegroundPermissionsAsync();
@@ -48,6 +47,7 @@ const Home = () => {
       );
       setData(response.data);
       setLoading(false);
+      console.log(response);
     } catch (e) {
       console.log("Erreur dans getWeather");
     }
@@ -84,7 +84,7 @@ const Home = () => {
   return (
     <View style={styles.container}>
       <CurrentWeather data={data} />
-      <FavButton></FavButton>
+      {/* <FavButton></FavButton> */}
       {/* <TouchableOpacity onPress={() => handleCurrentWeatherPress(data)}> */}
       <Forecasts data={data} />
       {/* </TouchableOpacity> */}
