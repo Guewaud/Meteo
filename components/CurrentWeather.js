@@ -47,7 +47,7 @@ const Color_Date = "#6333C9";
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 120,
+    marginTop: 10,
     alignItems: "center",
     height: "55%",
   },

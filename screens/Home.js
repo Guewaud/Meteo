@@ -5,6 +5,7 @@ import {
   Text,
   ActivityIndicator,
   TouchableOpacity,
+  TextInput
 } from "react-native";
 import * as Location from "expo-location";
 import axios from "axios";
@@ -83,6 +84,7 @@ const Home = () => {
   // Une fois la localisation obtenue, afficher les coordonnées
   return (
     <View style={styles.container}>
+      <TextInput style={styles.input}></TextInput>
       <CurrentWeather data={data} />
       {/* <FavButton></FavButton> */}
       {/* <TouchableOpacity onPress={() => handleCurrentWeatherPress(data)}> */}
@@ -101,4 +103,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  input:{
+    backgroundColor: 'white',
+    paddingHorizontal: 15,
+    paddingVertical: 10,
+    borderRadius: 10,
+    marginTop: 70,
+  }
 });
